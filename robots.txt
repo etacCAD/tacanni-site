@@ -1,0 +1,35 @@
+# Tacanni — robots.txt
+# Allow all search engines and AI crawlers full access
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.tacanni.com/sitemap.xml
+
+# -------------------------------------------
+# LLM / AI Crawlers — explicitly allowed
+# -------------------------------------------
+# GPTBot (OpenAI / ChatGPT)
+User-agent: GPTBot
+Allow: /
+
+# Google AI (Gemini, AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
+# ClaudeBot (Anthropic)
+User-agent: ClaudeBot
+Allow: /
+
+# PerplexityBot
+User-agent: PerplexityBot
+Allow: /
+
+# CCBot (Common Crawl, used by many LLMs)
+User-agent: CCBot
+Allow: /
+
+# Bytespider (ByteDance / TikTok AI)
+User-agent: Bytespider
+Allow: /
