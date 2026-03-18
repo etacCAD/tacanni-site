@@ -225,8 +225,8 @@
           <p class="card__text">Buyer-centric methodology that aligns your sales process with how decisions actually get made.</p>
         </div>
 
-        <div class="card" style="border: 1px solid var(--gold); position: relative; background: linear-gradient(135deg, rgba(200,165,92,0.08) 0%, var(--bg-card) 50%);">
-          <span style="position: absolute; top: -10px; left: 20px; background: var(--gold); color: var(--bg-primary); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 3px 10px; border-radius: 4px;">Free Assessment</span>
+        <div class="card" style="border: 1px solid var(--gold); position: relative; overflow: visible; background: linear-gradient(135deg, rgba(200,165,92,0.08) 0%, var(--bg-card) 50%);">
+          <span style="position: absolute; top: -10px; left: 20px; background: var(--gold); color: var(--bg-primary); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 3px 10px; border-radius: 4px; z-index: 1;">Free Assessment</span>
           <div class="card__icon" style="color: var(--gold);">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
@@ -445,6 +445,28 @@
         <p class="section-subtitle reveal reveal-delay-2" style="margin: 0 auto;">
           Ready to accelerate? Reach out directly or book a discovery call.
         </p>
+      </div>
+
+      <!-- Contact Quick Actions -->
+      <div class="grid-2 reveal reveal-delay-2" style="margin-bottom: var(--space-xl); gap: var(--space-md);">
+        <a href="mailto:evan@tacanni.com" class="card" style="text-align: center; text-decoration: none; border: 1px solid var(--border); padding: var(--space-lg); cursor: pointer;">
+          <div class="card__icon" style="margin: 0 auto var(--space-md);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <p style="font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); margin-bottom: var(--space-sm);">Email</p>
+          <p style="font-size: var(--fs-body-lg); color: var(--text-primary); font-weight: var(--fw-medium);">evan@tacanni.com</p>
+        </a>
+        <a href="https://app.reclaim.ai/m/evan-tacanni/quick-meeting" target="_blank" rel="noopener" class="card" style="text-align: center; text-decoration: none; border: 1px solid var(--gold); padding: var(--space-lg); cursor: pointer; background: linear-gradient(135deg, rgba(200,165,92,0.08) 0%, var(--bg-card) 50%);">
+          <div class="card__icon" style="margin: 0 auto var(--space-md); background: var(--gold-subtle); color: var(--gold);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <p style="font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted); margin-bottom: var(--space-sm);">Book a Meeting</p>
+          <p style="font-size: var(--fs-body-lg); color: var(--gold); font-weight: var(--fw-medium);">Schedule a Discovery Call</p>
+        </a>
       </div>
 
       <form class="form reveal reveal-delay-3" id="contactForm" action="https://formsubmit.co/evan@tacanni.com" method="POST">
