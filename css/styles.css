@@ -877,4 +877,30 @@ h1, h2, h3, h4, h5, h6 {
   .container { padding: 0 var(--space-md); }
 
   .testimonial { padding: var(--space-lg); }
+
+  /* Fix card rendering on mobile */
+  .card {
+    padding: var(--space-md);
+  }
+
+  .card__title {
+    font-size: 1.25rem;
+  }
+
+  .card__text {
+    font-size: var(--fs-small);
+    line-height: var(--lh-normal);
+  }
+
+  /* Fix button text wrapping on narrow screens */
+  .btn {
+    padding: 14px 24px;
+    font-size: var(--fs-small);
+    white-space: nowrap;
+  }
+
+  .card .btn {
+    white-space: normal;
+    text-align: center;
+  }
 }
