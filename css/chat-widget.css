@@ -430,7 +430,7 @@
 
 /* ─── Markdown in Messages ──────────────────────────────── */
 .acw-message-content p {
-  margin: 0 0 8px 0;
+  margin: 0 0 16px 0;
 }
 
 .acw-message-content p:last-child {
