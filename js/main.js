@@ -60,43 +60,33 @@ function initScrollAnimations() {
   reveals.forEach(el => observer.observe(el));
 }
 
-/* --- Contact Form (Formspree) --- */
+/* --- Contact Form (FormSubmit.co) --- */
 function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const btn = document.getElementById('submitBtn');
+  // Show success message if redirected back after submission
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('submitted') === 'true') {
     const status = document.getElementById('formStatus');
-    const originalText = btn.textContent;
-
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        status.style.display = 'block';
-        status.style.color = 'var(--gold)';
-        status.textContent = '✓ Message sent. I\'ll be in touch shortly.';
-        form.reset();
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch (err) {
+    if (status) {
       status.style.display = 'block';
-      status.style.color = '#ef4444';
-      status.textContent = 'Something went wrong. Please email evan@tacanni.com directly.';
-    } finally {
-      btn.textContent = originalText;
-      btn.disabled = false;
+      status.style.color = 'var(--gold)';
+      status.textContent = '✓ Message sent. I\'ll be in touch shortly.';
+    }
+    // Clean URL
+    window.history.replaceState({}, '', window.location.pathname);
+    // Scroll to contact section
+    const contact = document.getElementById('contact');
+    if (contact) setTimeout(() => contact.scrollIntoView({ behavior: 'smooth' }), 300);
+  }
+
+  // Show loading state on submit
+  form.addEventListener('submit', () => {
+    const btn = document.getElementById('submitBtn');
+    if (btn) {
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
     }
   });
 }
