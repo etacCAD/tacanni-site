@@ -15,29 +15,29 @@
   --acw-accent-hover: #818cf8;
   --acw-accent-glow: rgba(99, 102, 241, 0.35);
 
-  /* Dark theme (default) */
-  --acw-bg-primary: rgba(15, 15, 20, 0.92);
-  --acw-bg-secondary: rgba(25, 25, 35, 0.85);
-  --acw-bg-tertiary: rgba(35, 35, 50, 0.7);
-  --acw-bg-glass: rgba(255, 255, 255, 0.04);
-  --acw-bg-glass-hover: rgba(255, 255, 255, 0.07);
+  /* Dark theme — Tacanni Executive */
+  --acw-bg-primary: #111113;
+  --acw-bg-secondary: #1a1a1e;
+  --acw-bg-tertiary: #242428;
+  --acw-bg-glass: rgba(200, 165, 92, 0.04);
+  --acw-bg-glass-hover: rgba(200, 165, 92, 0.08);
 
-  --acw-border: rgba(255, 255, 255, 0.08);
-  --acw-border-accent: rgba(99, 102, 241, 0.3);
+  --acw-border: rgba(200, 165, 92, 0.15);
+  --acw-border-accent: rgba(200, 165, 92, 0.3);
 
   --acw-text-primary: rgba(255, 255, 255, 0.95);
   --acw-text-secondary: rgba(255, 255, 255, 0.6);
   --acw-text-muted: rgba(255, 255, 255, 0.35);
 
   --acw-user-bubble: var(--acw-accent);
-  --acw-user-text: #ffffff;
+  --acw-user-text: #111113;
   --acw-bot-bubble: var(--acw-bg-tertiary);
   --acw-bot-text: var(--acw-text-primary);
 
-  --acw-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --acw-shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
-  --acw-shadow-lg: 0 16px 64px rgba(0, 0, 0, 0.5);
-  --acw-shadow-glow: 0 0 40px var(--acw-accent-glow);
+  --acw-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --acw-shadow-md: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --acw-shadow-lg: 0 16px 64px rgba(0, 0, 0, 0.6);
+  --acw-shadow-glow: 0 0 30px var(--acw-accent-glow);
 
   --acw-radius-sm: 8px;
   --acw-radius-md: 16px;
@@ -50,9 +50,9 @@
   --acw-transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
   --acw-transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  --acw-panel-width: 400px;
-  --acw-panel-max-height: 600px;
-  --acw-bubble-size: 60px;
+  --acw-panel-width: 380px;
+  --acw-panel-max-height: 520px;
+  --acw-bubble-size: 56px;
 
   font-family: var(--acw-font);
   font-size: 14px;
@@ -133,9 +133,9 @@
 }
 
 .acw-bubble svg {
-  width: 28px;
-  height: 28px;
-  fill: white;
+  width: 24px;
+  height: 24px;
+  fill: #111113;
   transition: transform var(--acw-transition-smooth),
               opacity var(--acw-transition-fast);
 }
@@ -213,11 +213,9 @@
   width: var(--acw-panel-width);
   max-height: var(--acw-panel-max-height);
   background: var(--acw-bg-primary);
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
   border: 1px solid var(--acw-border);
-  border-radius: var(--acw-radius-lg);
-  box-shadow: var(--acw-shadow-lg);
+  border-radius: var(--acw-radius-md);
+  box-shadow: var(--acw-shadow-lg), 0 0 1px rgba(200, 165, 92, 0.2);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -250,9 +248,9 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 16px 20px;
+  padding: 14px 16px;
   border-bottom: 1px solid var(--acw-border);
-  background: var(--acw-bg-glass);
+  background: var(--acw-bg-secondary);
 }
 
 .acw-header-avatar {
@@ -345,12 +343,12 @@
 .acw-messages {
   flex: 1;
   overflow-y: auto;
-  padding: 16px;
+  padding: 14px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  min-height: 200px;
-  max-height: calc(var(--acw-panel-max-height) - 140px);
+  gap: 10px;
+  min-height: 180px;
+  max-height: calc(var(--acw-panel-max-height) - 130px);
   scroll-behavior: smooth;
 }
 
@@ -402,25 +400,25 @@
 }
 
 .acw-message-content {
-  padding: 10px 16px;
-  border-radius: var(--acw-radius-md);
-  font-size: 14px;
-  line-height: 1.55;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  line-height: 1.5;
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
 .acw-message--user .acw-message-content {
-  background: linear-gradient(135deg, var(--acw-accent), var(--acw-accent-hover));
+  background: var(--acw-accent);
   color: var(--acw-user-text);
-  border-bottom-right-radius: var(--acw-radius-sm);
+  border-bottom-right-radius: 4px;
 }
 
 .acw-message--bot .acw-message-content {
-  background: var(--acw-bot-bubble);
+  background: var(--acw-bg-secondary);
   color: var(--acw-bot-text);
-  border: 1px solid var(--acw-border);
-  border-bottom-left-radius: var(--acw-radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom-left-radius: 4px;
 }
 
 .acw-message-time {
@@ -570,9 +568,9 @@
   display: flex;
   align-items: flex-end;
   gap: 8px;
-  padding: 12px 16px;
+  padding: 10px 14px;
   border-top: 1px solid var(--acw-border);
-  background: var(--acw-bg-glass);
+  background: var(--acw-bg-secondary);
 }
 
 .acw-input-wrap {
@@ -612,11 +610,11 @@
 }
 
 .acw-send-btn {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border: none;
-  background: linear-gradient(135deg, var(--acw-accent), var(--acw-accent-hover));
-  color: white;
+  background: var(--acw-accent);
+  color: #111113;
   border-radius: var(--acw-radius-full);
   cursor: pointer;
   display: flex;
@@ -653,47 +651,49 @@
 /* ─── Powered By Footer ─────────────────────────────────── */
 .acw-footer {
   text-align: center;
-  padding: 6px 16px 10px;
-  font-size: 10px;
+  padding: 5px 14px 8px;
+  font-size: 9px;
   color: var(--acw-text-muted);
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 /* ─── Welcome Message ───────────────────────────────────── */
 .acw-welcome {
   text-align: center;
-  padding: 24px 20px 8px;
+  padding: 20px 16px 8px;
 }
 
 .acw-welcome-icon {
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 12px;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 10px;
   border-radius: var(--acw-radius-full);
-  background: linear-gradient(135deg, var(--acw-accent), var(--acw-accent-hover));
+  background: var(--acw-accent);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px var(--acw-accent-glow);
+  box-shadow: 0 2px 12px var(--acw-accent-glow);
 }
 
 .acw-welcome-icon svg {
-  width: 24px;
-  height: 24px;
-  fill: white;
+  width: 22px;
+  height: 22px;
+  fill: #111113;
 }
 
 .acw-welcome h3 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  color: var(--acw-text-primary);
-  margin-bottom: 6px;
+  color: var(--acw-accent);
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
 }
 
 .acw-welcome p {
   font-size: 13px;
   color: var(--acw-text-secondary);
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 /* ─── Mobile Responsive ─────────────────────────────────── */
@@ -711,20 +711,22 @@
 
   .acw-panel {
     position: fixed;
-    inset: 0;
-    width: 100%;
-    max-height: 100%;
-    border-radius: 0;
-    bottom: 0;
+    bottom: 80px !important;
+    right: 16px !important;
+    left: 16px !important;
+    width: auto;
+    max-height: calc(100vh - 120px);
+    max-height: calc(100dvh - 120px);
+    border-radius: var(--acw-radius-md);
   }
 
   .acw-messages {
-    max-height: calc(100vh - 140px);
-    max-height: calc(100dvh - 140px);
+    max-height: calc(100vh - 240px);
+    max-height: calc(100dvh - 240px);
   }
 
   .acw-bubble {
-    --acw-bubble-size: 56px;
+    --acw-bubble-size: 52px;
   }
 }
 
